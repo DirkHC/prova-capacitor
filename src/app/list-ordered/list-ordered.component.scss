@@ -1,0 +1,41 @@
+.pizza-options {
+    margin-bottom: 32px;
+}
+
+.headline {
+    margin-bottom: 16px;
+}
+
+.order-table {
+    width: 100%;
+}
+
+.order-table th.string,
+td.string {
+    text-align: left;
+    max-width: none;
+    min-width: 80px;
+}
+
+.order-table th.numeric,
+td.numeric {
+    text-align: right;
+    max-width: 100px;
+    min-width: 90px;
+}
+
+.order-table td.number-stepper {
+    padding-top: 4px;
+    max-width: 144px;
+    min-width: 144px;
+}
+
+.order-table .button-column {
+    max-width: 64px;
+    min-width: 64px;
+    text-align: right;
+}
+
+.table-container {
+    overflow-y: auto;
+}

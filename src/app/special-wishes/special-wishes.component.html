@@ -1,0 +1,13 @@
+<h3 nxHeadline="subsection-large" class="nx-margin-bottom-2m">Special options</h3>
+
+<nx-taglist #taglistObjects [(nxTags)]="tags">You can add some special wishes if you want!</nx-taglist>
+
+<nx-formfield nxLabel="Any special wishes?">
+    <input nxInput #addTagInputObjects />
+    <span nxFormfieldHint> </span>
+</nx-formfield>
+
+<div class="button-row">
+    <button class="button-row__button" nxButton="primary small" (click)="taglistObjects.addTag({ nxTaglistLabel: addTagInputObjects.value })">Add wish</button>
+    <button class="button-row__button" nxButton="secondary small" (click)="taglistObjects.clearTags()">Clear all</button>
+</div>

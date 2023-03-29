@@ -1,0 +1,16 @@
+<h3 nxHeadline="subsection-small" class="nx-margin-bottom-m">Want to learn more about our pizza?</h3>
+
+<div class="center">
+    <button #basicModalButton nxButton="cta" class="center-button">Click here</button>
+</div>
+
+<ng-template #basicModalBody>
+    <h3 nxHeadline="subsection-medium" class="center nx-margin-bottom-m">Here"s a modal dialog with more info</h3>
+
+    <ul nxList="small">
+        <li>We have four pizza bakers</li>
+        <li>We"re making 1500 pizzas per day</li>
+        <li>Our most popular pizza is Margerita</li>
+    </ul>
+</ng-template>
+<nx-modal #basicModal [nxBody]="basicModalBody" *nxOpenModalOnClick="basicModalButton"> </nx-modal>

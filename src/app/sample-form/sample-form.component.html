@@ -1,0 +1,61 @@
+<h2 nxHeadline="section" class="nx-margin-bottom-4m">Your data</h2>
+
+<form class="form-example">
+    <div nxRow>
+        <div nxCol="6">
+            <nx-formfield nxLabel="First Name">
+                <input nxInput required ngModel name="firstName" />
+                <nx-message nxContext="error" nxFormfieldError> Your name is missing. </nx-message>
+            </nx-formfield>
+        </div>
+        <div nxCol="6">
+            <nx-formfield nxLabel="Last Name">
+                <input nxInput required ngModel name="lastName" />
+                <nx-message nxContext="error" nxFormfieldError> Your name is missing. </nx-message>
+            </nx-formfield>
+        </div>
+    </div>
+
+    <nx-formfield nxLabel="E-Mail">
+        <input nxInput required ngModel name="email" />
+        <nx-icon nxFormfieldAppendix name="info-circle-o" [nxPopoverTriggerFor]="popoverEmail" nxPopoverTrigger="hover"> </nx-icon>
+        <nx-message nxContext="error" nxFormfieldError> Your email is missing. </nx-message>
+    </nx-formfield>
+
+    <nx-formfield nxLabel="Date of delivery">
+        <input nxDatefield nxInput [nxDatepicker]="myDatepicker" [(ngModel)]="deliveryDate" name="someName" />
+        <span nxFormfieldHint>MM/DD/YYYY</span>
+        <nx-datepicker-toggle [for]="myDatepicker" nxFormfieldSuffix></nx-datepicker-toggle>
+        <nx-datepicker #myDatepicker></nx-datepicker>
+    </nx-formfield>
+
+    <nx-formfield nxLabel="Phone number">
+        <input nxInput />
+        <span nxFormfieldPrefix> +49 </span>
+    </nx-formfield>
+
+    <div nxRow>
+        <div nxCol="7">
+            <nx-checkbox #giveTip style="margin-top: 20px">Give a tip to the pizza baker</nx-checkbox>
+        </div>
+        <div nxCol="5">
+            <nx-formfield nxLabel="Tip">
+                <input nxInput [disabled]="!giveTip.checked" type="number" />
+                <span nxFormfieldSuffix> Euro </span>
+            </nx-formfield>
+        </div>
+    </div>
+
+    <nx-formfield nxLabel="Feedback to us">
+        <input nxInput value="This feedback is prefilled, but you can add some more!" />
+    </nx-formfield>
+
+    <nx-switcher [checked]="true">I want to get news about your pizzas!</nx-switcher>
+    <div class="data-form__row-buttons">
+        <button class="data-form__button-send" nxButton>Check your data</button>
+    </div>
+</form>
+
+<nx-popover #popoverEmail>
+    <div style="max-width: 200px">You look at the hint for entering your Email address.</div>
+</nx-popover>

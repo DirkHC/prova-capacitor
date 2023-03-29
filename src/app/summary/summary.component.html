@@ -1,0 +1,35 @@
+<nx-message *ngIf="sendOrder" nxContext="success" showIcon="true" class="nx-margin-bottom-xs"> We received your pizza order! </nx-message>
+
+<nx-message *ngIf="discardOrder" nxContext="warning" showIcon="true" class="nx-margin-bottom-xs"> Are you sure? </nx-message>
+
+<nx-accordion>
+    <nx-expansion-panel expanded="true">
+        <nx-expansion-panel-header>
+            <nx-expansion-panel-title>General information</nx-expansion-panel-title>
+        </nx-expansion-panel-header>
+
+        <ol nxList="ordered-circle">
+            <li>We only use regional products</li>
+            <li>We love making our customers happy</li>
+            <li>Our tiramisu is also awesome, try it!</li>
+        </ol>
+    </nx-expansion-panel>
+
+    <nx-expansion-panel>
+        <nx-expansion-panel-header>
+            <nx-expansion-panel-title>Payment details</nx-expansion-panel-title>
+        </nx-expansion-panel-header>
+
+        <ul nxList>
+            <li nxListIcon="mail-o">As soon as we receive your order, you will get an E-Mail with the order details.</li>
+            <li nxListIcon="product-money-exchange">Please give the money to us when you are receiving your pizza.</li>
+            <li nxListIcon="star">We donate ten percent of our income.</li>
+            <li>Please give us some feedback!</li>
+        </ul>
+    </nx-expansion-panel>
+</nx-accordion>
+
+<div class="data-form__row-buttons">
+    <button nxButton="emphasis" (click)="discardOrderClicked()">Discard</button>
+    <button class="data-form__button-send" (click)="sendOrderClicked()" nxButton>Send order</button>
+</div>

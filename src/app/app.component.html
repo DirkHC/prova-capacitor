@@ -1,0 +1,102 @@
+<header nx-header>
+    <nx-header-brand class="nx-margin-right-5xl">
+        <nx-link>
+            <a href="#">
+                <figure nxFigure>
+                    <img src="assets/logos/allianz.png" alt="Brand Logo" role="none" style="max-width: 36px; max-height: 36px" />
+                </figure>
+            </a>
+        </nx-link>
+
+        <nx-header-app-title>NDBX Sample App</nx-header-app-title>
+    </nx-header-brand>
+</header>
+
+<div class="sample-app">
+    <div class="stepper-container">
+        <nx-multi-stepper currentStepLabel="Step">
+            <ng-container>
+                <nx-step label="Your data">
+                    <div nxLayout="grid">
+                        <div nxRow>
+                            <div nxCol="12,12,12,8" nxColOrder="last,last,last,first">
+                                <div class="container top-container">
+                                    <app-sample-form></app-sample-form>
+                                </div>
+                            </div>
+                            <div nxCol="12,12,12,4" nxColOrder="first,first,first,last">
+                                <app-step-button-container></app-step-button-container>
+                                <div class="container">
+                                    <app-way-of-delivery></app-way-of-delivery>
+                                </div>
+                                <div class="container">
+                                    <app-more-about-us></app-more-about-us>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nx-step>
+
+                <nx-step label="Ordered Pizzas">
+                    <div nxLayout="grid">
+                        <div nxRow>
+                            <div nxCol="12,12,12,8" nxColOrder="last,last,last,first">
+                                <div class="container top-container">
+                                    <app-list-ordered></app-list-ordered>
+                                </div>
+                            </div>
+                            <div nxCol="12,12,12,4" nxColOrder="first,first,first,last">
+                                <app-step-button-container></app-step-button-container>
+                            </div>
+                        </div>
+                    </div>
+                </nx-step>
+
+                <nx-step label="Options and special wishes">
+                    <div nxLayout="grid">
+                        <div nxRow>
+                            <div nxCol="12,12,12,8" nxColOrder="last,last,last,first">
+                                <div class="container top-container">
+                                    <app-pizza-crust></app-pizza-crust>
+                                </div>
+                                <div class="container">
+                                    <app-special-wishes></app-special-wishes>
+                                    <br />
+                                </div>
+                            </div>
+
+                            <div nxCol="12,12,12,4" nxColOrder="first,first,first,last">
+                                <app-step-button-container></app-step-button-container>
+                                <div class="container">
+                                    <app-pizza-diameter></app-pizza-diameter>
+                                </div>
+                                <div class="container">
+                                    <app-service-rating></app-service-rating>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nx-step>
+
+                <nx-step label="Summary">
+                    <div nxLayout="grid">
+                        <div nxRow>
+                            <div nxColOffset="0,0,0,8" nxCol="12,12,12,4">
+                                <app-step-button-container></app-step-button-container>
+                            </div>
+                        </div>
+                        <div nxRow>
+                            <div nxCol="12">
+                                <div class="container">
+                                    <app-summary></app-summary>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nx-step>
+            </ng-container>
+        </nx-multi-stepper>
+    </div>
+
+    <footer nx-footer copyright="Allianz"></footer>
+</div>

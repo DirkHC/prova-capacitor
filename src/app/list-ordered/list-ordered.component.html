@@ -1,0 +1,34 @@
+<h2 nxHeadline="section" class="nx-margin-bottom-4m">My ordered stuff</h2>
+
+<div class="table-container">
+    <table nxTable class="order-table">
+        <tr nxTableRow>
+            <th nxHeaderCell class="text string">Pizza</th>
+            <th nxHeaderCell class="numeric">Price</th>
+            <th nxHeaderCell></th>
+            <th nxHeaderCell class="numeric">Total price</th>
+            <th nxHeaderCell></th>
+        </tr>
+        <tr nxTableRow *ngFor="let pizza of pizzas">
+            <td nxTableCell class="text string">{{ pizza.name }}</td>
+            <td nxTableCell class="text numeric">{{ pizza.price.toFixed(2) }} €</td>
+            <td nxTableCell class="number-stepper">
+                <nx-number-stepper
+                    class="nx-stepper"
+                    nxSize="normal"
+                    nxStyle="regular"
+                    nxMin="1"
+                    [(nxValue)]="pizza.amount"
+                    (nxValueChange)="setTotalPrice(pizza)"
+                >
+                </nx-number-stepper>
+            </td>
+            <td nxTableCell class="text numeric">{{ pizza.totalPrice.toFixed(2) }} €</td>
+            <td nxTableCell class="button-column">
+                <button nxButton="primary small" class="nx-margin-bottom-0" (click)="remove(pizza)">
+                    <nx-icon name="trash"></nx-icon>
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
